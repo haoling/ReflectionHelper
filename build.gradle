@@ -1,0 +1,35 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.4'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+
+repositories {
+    //mavenCentral()
+    maven {
+        name 'Spigot/Bukkit maven repo'
+        url 'http://maven.elmakers.com/repository'
+    }
+    maven {
+        name 'inventive-repo'
+        url 'http://repo.inventivetalent.org/content/groups/public/'
+    }
+}
+
+version = '1.11.2-SNAPSHOT'
+group= 'org.inventivetalent' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+
+dependencies {
+    compile "org.spigotmc:spigot:1.11.2-R0.1-SNAPSHOT"
+    compile "org.bukkit:craftbukkit:1.11.2-R0.1-SNAPSHOT"
+    compile "junit:junit:4.12"
+}
